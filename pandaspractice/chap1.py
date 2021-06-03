@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
 
 # test = np.array([[1,2,3,4],[2,9,3,5]])
 
@@ -50,6 +51,16 @@ df = pd.read_csv('/Users/ice_macbookair/Desktop/Ice Data engineer/practice_pytho
 # df_flat = g_con.reset_index()
 # print(df_flat.head(10))
 
-new_df = df.groupby('continent')['country'].nunique()
-new_df1 = df.groupby('continent')['country'].value_counts()
-print(new_df1)
+# new_df = df.groupby('continent')['country'].nunique()
+# new_df1 = df.groupby('continent')['country'].value_counts()
+# print(new_df1)
+
+# df2 = df.country.value_counts()
+# print(df2)
+
+year_life_exp = df.groupby('year')['lifeExp'].mean()
+print(year_life_exp)
+
+year_life_exp.plot()
+
+plt.show()
